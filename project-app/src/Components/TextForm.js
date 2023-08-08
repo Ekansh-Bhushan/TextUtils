@@ -17,7 +17,7 @@ export default function TextForm(props) {
     setText(newLText)
   }
 
-  const [text,setText] = useState('Enter Text Here')
+  const [text,setText] = useState('')
   return (
     <>
       <div className="mb-3">
@@ -37,7 +37,7 @@ export default function TextForm(props) {
         </div>
         <div className="container my-3">
 
-          <h1>Your text summary</h1>
+          <h2>Your text summary</h2>
           <p>{text.split(" ").length} word and {text.length} charchter</p>
           <p>{0.008* text.split(" ").length} Minutes to read</p>
           <h3>preview</h3>
