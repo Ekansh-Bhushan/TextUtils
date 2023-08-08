@@ -17,6 +17,22 @@ export default function TextForm(props) {
     setText(newLText)
   }
 
+  const handleCopy =()=>{
+    let copied = document.getElementById("mybox")
+    copied.select()
+    navigator.clipboard.writeText(copied.value)
+  
+  }
+
+  const handleClear=()=>{
+    setText("")
+  }
+
+  const handleExtraSpace=()=>{
+    let removeExtra = text.split(/[ ]+/)
+    setText(removeExtra.join(" "))
+  }
+
   const [text,setText] = useState('')
   return (
     <>
@@ -33,7 +49,11 @@ export default function TextForm(props) {
           rows="8"
         ></textarea>
         <button className="btn btn-primary mx-3" onClick={handleUpCase}>convert to uppercase</button>
-        <button className="btn btn-primary" onClick={handleOncase}>Convert to lowercase</button>
+        <button className="btn btn-primary mx-3" onClick={handleOncase}>Convert to lowercase</button>
+        <button className="btn btn-primary mx-3" onClick={handleCopy}>Copy</button>
+        <button className="btn btn-primary mx-3" onClick={handleClear}>Clear</button>
+        <button className="btn btn-primary mx-3" onClick={handleExtraSpace}>remove extra space</button>
+
         </div>
         <div className="container my-3">
 
