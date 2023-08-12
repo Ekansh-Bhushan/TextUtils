@@ -42,8 +42,8 @@ function App() {
         <Alert alert={alert} />
         <Routes >
           
-          <Route exact path="/" element={<TextForm showAlert={showAlert} heading="Enter the text" mode={mode} />} />
-          <Route exact path="/about" element={<About />} />
+          <Route exact path="/" element={<TextForm showAlert={showAlert} heading="TextUtils - word counter, character counter, remove extra spaces, uppercase to lowercase and visa versa" mode={mode} />} />
+          <Route exact path="/about" element={<About mode={mode}/>} />
         </Routes>
 
       </Router>
